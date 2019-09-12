@@ -2156,12 +2156,12 @@ var environment = {
     user: 'http://api.moer.pro/user',
     // query: 'http://center:6002',
     // query: 'http://query.alpha:23456',
-    query: 'http://query.kube',
+    query: 'http://query.beta',
     // command: 'http://command.alpha:23456',
-    command: 'http://command.kube',
+    command: 'http://command.beta',
     //
     // websocket: 'ws://websocket.alpha:23456/exchange/websocket'
-    websocket: 'ws://websocket.kube/exchange/websocket'
+    websocket: 'ws://websocket.beta/exchange/websocket'
     // websocket: 'ws://localhost:6001/exchange/websocket'
 };
 /*
