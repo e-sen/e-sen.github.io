@@ -18,21 +18,23 @@
   <meta name="author" content="Iamee">
   <meta name="keywords" content="2E,BLOG,笔记,技术,打工人">
   
-    <meta name="description" content="默默打工の2E我也不知道自己是不是玉石。或者，只是众多瓦砾中的一员。  依稀记得，某个夜晚。打开收音机，恰巧听到了一句话。出自于 中岛敦 的 《山月记》： 因为害怕自己并非明珠而不敢刻苦琢磨，又因为有几分相信自己是明珠，而不能与砂砾碌碌为伍，遂逐渐远离世间，疏避人群，结果在内心不断地用愤懑和羞怒饲育着自己懦弱的自尊心。 技术栈用过的编程语言 C#   JavaScript &#x2F; TypeS">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于">
-<meta property="og:url" content="http://example.com/about/index.html">
+    <meta name="description" content="平衡二叉树(AVL树)为什么叫 AVL 树，因为他的发明者是 G.M.Adelson-Velsky &amp; Evgenii Landis，根据科学家的英文名也称为AVL树。在1962年发表的论文 《An algorithm for the organization of information》 中公开了这一数据结构 为什么要有平衡二叉树二叉查找树在一定程度上可以提高搜索效率。但是，当原序列为">
+<meta property="og:type" content="article">
+<meta property="og:title" content="平衡二叉树">
+<meta property="og:url" content="http://example.com/2022/02/12/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/index.html">
 <meta property="og:site_name" content="默默打工の2E">
-<meta property="og:description" content="默默打工の2E我也不知道自己是不是玉石。或者，只是众多瓦砾中的一员。  依稀记得，某个夜晚。打开收音机，恰巧听到了一句话。出自于 中岛敦 的 《山月记》： 因为害怕自己并非明珠而不敢刻苦琢磨，又因为有几分相信自己是明珠，而不能与砂砾碌碌为伍，遂逐渐远离世间，疏避人群，结果在内心不断地用愤懑和羞怒饲育着自己懦弱的自尊心。 技术栈用过的编程语言 C#   JavaScript &#x2F; TypeS">
+<meta property="og:description" content="平衡二叉树(AVL树)为什么叫 AVL 树，因为他的发明者是 G.M.Adelson-Velsky &amp; Evgenii Landis，根据科学家的英文名也称为AVL树。在1962年发表的论文 《An algorithm for the organization of information》 中公开了这一数据结构 为什么要有平衡二叉树二叉查找树在一定程度上可以提高搜索效率。但是，当原序列为">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-02-12T10:05:29.000Z">
+<meta property="article:published_time" content="2022-02-12T15:03:47.000Z">
 <meta property="article:modified_time" content="2022-02-12T07:42:09.771Z">
 <meta property="article:author" content="Iamee">
-<meta property="article:tag" content="2E,BLOG,笔记,技术,打工人">
+<meta property="article:tag" content="时间复杂度">
+<meta property="article:tag" content="数据结构">
+<meta property="article:tag" content="树">
 <meta name="twitter:card" content="summary_large_image">
   
   
-  <title>关于 - 默默打工の2E</title>
+  <title>平衡二叉树 - 默默打工の2E</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -81,7 +83,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -182,9 +184,43 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="关于">
+            <span class="h2" id="subtitle" title="平衡二叉树">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-02-12 15:03" pubdate>
+        2022年2月12日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      745 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      7 分钟
+    </span>
+  
+
+  
+  
+</div>
 
             
           </div>
@@ -197,119 +233,154 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-            <div class="about-avatar">
-              <img src="https://avatars.githubusercontent.com/u/87379315?s=400&amp;u=dfff72dc3a92ae42d0268f22586bf2a0ad85bdc8&amp;v=4" srcset="/img/loading.gif" lazyload
-                   class="img-fluid" alt="avatar">
-            </div>
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
-<div class="text-center">
-  <div class="about-info">
-    <div class="about-name">I'm ee</div>
-    <div class="about-intro">一个默默无闻的打工人</div>
-    <div class="about-icons">
-      
-        
-        
-        
-        <a href=https://github.com/e-sen class="
-           hint--bottom hint--rounded"
-           aria-label=GitHub
-           target="_blank"
-        >
-          <i class="iconfont icon-github-fill" aria-hidden="true"></i>
-          
-        </a>
-      
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">平衡二叉树</h1>
+            
+            <div class="markdown-body">
+              <h2 id="平衡二叉树-AVL树"><a href="#平衡二叉树-AVL树" class="headerlink" title="平衡二叉树(AVL树)"></a>平衡二叉树(AVL树)</h2><p>为什么叫 AVL 树，因为他的发明者是 <a href="">G.M.Adelson-Velsky</a> &amp; <a href="">Evgenii Landis</a>，根据科学家的英文名也称为<strong>AVL树</strong>。在1962年发表的论文 <a href="">《An algorithm for the organization of information》</a> 中公开了这一数据结构</p>
+<h3 id="为什么要有平衡二叉树"><a href="#为什么要有平衡二叉树" class="headerlink" title="为什么要有平衡二叉树"></a>为什么要有平衡二叉树</h3><p>二叉查找树在一定程度上可以提高搜索效率。但是，当原序列为有序时。构造的就是一颗倾斜二叉查找树。这时，二叉树退化成单链表，搜索效率降低为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></p>
+<p>二叉查找树的查找效率取决于树的高度，因此保持树的高度最小，即可保证树的查询效率。</p>
+<div class="code-wrapper"><pre><code class="hljs">左右子树的高度相差不超过1的树为平衡二叉树
+</code></pre></div>
+<h3 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h3><p><strong>平衡二叉查找树</strong>:简称平衡二叉树</p>
+<ol>
+<li>可以是空树。</li>
+<li>如果不是空树，任何一个节点的左子树与右子树都是平衡二叉树，并且高度之差绝对值不超过1。</li>
+</ol>
+<h3 id="平衡因子"><a href="#平衡因子" class="headerlink" title="平衡因子"></a>平衡因子</h3><p><strong>平衡因子</strong>:某节点的左子树和右子树的高度（深度）差即为该节点的平衡因子（BF,Balance Factor）。在一颗平衡二叉树中，节点的平衡因子只能是 0、1、-1。</p>
+<h3 id="失衡与调整"><a href="#失衡与调整" class="headerlink" title="失衡与调整"></a>失衡与调整</h3><p><strong>最小失衡树</strong>：在新插入的节点向上查找，一第一个平衡因子的绝对值超过1的节点为根的子树称为最小不平衡子树。也就是说，一颗失衡的树，是有可能有多颗子树同时失衡的。而这个时候，我们只需要调整最小的不平衡子树，就能够将不平衡的树调整为平衡的树。</p>
+<p>旋转的目的是减少高度，通过降低整棵树的高度来平衡。</p>
+<p><strong>删除元素 &amp; 添加元素都有可能造成树的失衡，需要进行调整</strong></p>
+<h4 id="左旋"><a href="#左旋" class="headerlink" title="左旋"></a>左旋</h4><p>右子树高度高于左子树。</p>
+<blockquote>
+<p>节点的右孩子替代此节点位置</p>
+</blockquote>
+<blockquote>
+<p>右孩子的左子树变为该节点的右子树</p>
+</blockquote>
+<blockquote>
+<p>节点本身变成右孩子的左子树</p>
+</blockquote>
+<h4 id="右旋"><a href="#右旋" class="headerlink" title="右旋"></a>右旋</h4><p>左子树高度高于右子树</p>
+<blockquote>
+<p>节点的左孩子替代节点位置</p>
+</blockquote>
+<blockquote>
+<p>节点的右子树变为该节点的左子树</p>
+</blockquote>
+<blockquote>
+<p>节点本身变成左孩子的右子树</p>
+</blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/56066942">什么是平衡二叉树</a>
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/">时间复杂度</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%A0%91/">树</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/02/11/%E5%85%B3%E4%BA%8E%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/">
+                        <span class="hidden-mobile">关于时间复杂度</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"7a89328c21931cada530","clientSecret":"c0d4be8681fbd8719374d2db27555174b85a6b39","repo":"e-sen.github.io","owner":"e-sen","admin":["e-sen"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true},
+          {
+            id: '3788bce40ef818c8cf4c3ff95d9c1586'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
     </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
   </div>
 </div>
 
-<article class="about-content page-content mt-5">
-  <div class="markdown-body">
-    <h2 id="默默打工の2E"><a href="#默默打工の2E" class="headerlink" title="默默打工の2E"></a>默默打工の2E</h2><div class="code-wrapper"><pre><code class="hljs">我也不知道自己是不是玉石。或者，只是众多瓦砾中的一员。
-</code></pre></div>
-<p>依稀记得，某个夜晚。打开收音机，恰巧听到了一句话。出自于 <strong>中岛敦</strong> 的 <strong>《山月记》</strong>：</p>
-<p><strong>因为害怕自己并非明珠而不敢刻苦琢磨，又因为有几分相信自己是明珠，而不能与砂砾碌碌为伍，遂逐渐远离世间，疏避人群，结果在内心不断地用愤懑和羞怒饲育着自己懦弱的自尊心。</strong></p>
-<h2 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h2><h3 id="用过的编程语言"><a href="#用过的编程语言" class="headerlink" title="用过的编程语言"></a>用过的编程语言</h3><blockquote>
-<p>C#</p>
-</blockquote>
-<blockquote>
-<p>JavaScript &#x2F; TypeScript</p>
-</blockquote>
-<blockquote>
-<p>Java &#x2F; Kotlin &#x2F; Scala</p>
-</blockquote>
-<blockquote>
-<p>Dart</p>
-</blockquote>
-<h3 id="大数据相关的"><a href="#大数据相关的" class="headerlink" title="大数据相关的"></a>大数据相关的</h3><blockquote>
-<p>CDH</p>
-</blockquote>
-<blockquote>
-<p>Haddop</p>
-</blockquote>
-<blockquote>
-<p>Spark</p>
-</blockquote>
-<blockquote>
-<p>Storm</p>
-</blockquote>
-<blockquote>
-<p>Kafka</p>
-</blockquote>
-<blockquote>
-<p>Zookeeper</p>
-</blockquote>
-<blockquote>
-<p>ELK</p>
-</blockquote>
-<h3 id="Devops相关的"><a href="#Devops相关的" class="headerlink" title="Devops相关的"></a>Devops相关的</h3><blockquote>
-<p>Jenkins</p>
-</blockquote>
-<blockquote>
-<p>Gitlab CI</p>
-</blockquote>
-<blockquote>
-<p>Docker</p>
-</blockquote>
-<blockquote>
-<p>K8s</p>
-</blockquote>
-<blockquote>
-<p>Helm</p>
-</blockquote>
-<h3 id="前端相关的"><a href="#前端相关的" class="headerlink" title="前端相关的"></a>前端相关的</h3><blockquote>
-<p>React</p>
-</blockquote>
-<blockquote>
-<p>Angular</p>
-</blockquote>
-<blockquote>
-<p>Vue</p>
-</blockquote>
-<blockquote>
-<p>Flutter</p>
-</blockquote>
+<!-- Custom -->
 
-  </div>
 
-  
-</article>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     
 
     
