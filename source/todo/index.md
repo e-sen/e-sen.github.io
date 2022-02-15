@@ -29,3 +29,11 @@ Java中的TreeMap是使用的红黑树，有帮助我项目中的一些优化，
 > [SkipList时间复杂度](https://blog.csdn.net/yaling521/article/details/78130271)
 
 > [SkipList详解](https://blog.csdn.net/helloworld_ptt/article/details/105801262)
+
+### 动态规划 （Dynamic Programming，DP）
+
+动态规划（Dynamic Programming，DP）是一种将复杂问题分解成小问题求解的策略，但与分治算法不同的是，分治算法要求各子问题是相互独立的，而动态规划各子问题是相互关联的。
+
+运筹学学的不好，这下又尴尬了。。
+
+> [动态规划](https://baike.baidu.com/item/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/529408?fr=aladdin)
