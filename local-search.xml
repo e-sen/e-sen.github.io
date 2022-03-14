@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>Git Commit Message 和 Change Log</title>
+    <link href="/2022/03/14/Git-Commit-Message-%E5%92%8C-Change-Log/"/>
+    <url>/2022/03/14/Git-Commit-Message-%E5%92%8C-Change-Log/</url>
+    
+    <content type="html"><![CDATA[<p>使用<code>Commitizen</code>来规范我们提交的<code>Git Commit Message</code>，最后生成我们需要的<code>Change Log</code></p><span id="more"></span><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a href="https://github.com/commitizen/cz-cli">Github: Commitizen</a><a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><a href="https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines">Angular: Git Commit Guidelines</a><a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>规范</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>测试驱动开发</title>
     <link href="/2022/02/25/%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/"/>
     <url>/2022/02/25/%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/</url>
