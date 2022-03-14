@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 默默打工の2E
+title: 老白的随心笔记
 subtitle: '好记性不如烂笔头。我来！我看！我记下来~~'
-description: '2E的'
-keywords: 2E,BLOG,笔记,技术,打工人
-author: Iamee
+description: '老白的随心笔记'
+keywords: 2E,BLOG,笔记,技术,老白
+author: 老白
 language: zh-CN
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://github.com/e-sen/e-sen.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
