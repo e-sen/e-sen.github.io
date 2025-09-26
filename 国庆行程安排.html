@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>十一国庆旅行行程安排</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'rose-gold': '#E8B4B8',
+                        'soft-pink': '#F8E8E9',
+                        'warm-beige': '#F5F1EB'
+                    },
+                    fontFamily: {
+                        'chinese': ['PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Noto Sans SC', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-shadow { box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .timeline-line { background: linear-gradient(to bottom, #f093fb 0%, #f5576c 100%); }
+        .floating { animation: floating 3s ease-in-out infinite; }
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .love-heart { color: #ff6b9d; animation: heartbeat 1.5s ease-in-out infinite; }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-100 min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-12 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center">
+                <h1 class="text-5xl font-bold mb-4 floating">
+                    十一国庆旅行行程安排
+                </h1>
+                <p class="text-xl opacity-90 mb-6">精心规划的国庆假期旅行安排</p>
+                <div class="flex justify-center space-x-8 text-lg">
+                    <div class="flex items-center">
+                        <span class="text-2xl mr-2">🌟</span>
+                        <span>城市文化游</span>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-2xl mr-2">⛺</span>
+                        <span>浪漫露营</span>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-2xl mr-2">💒</span>
+                        <span>朋友婚礼</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <!-- 整体策略 -->
+        <section class="mb-16">
+            <div class="bg-white rounded-3xl p-8 card-shadow border-l-8 border-pink-400">
+                <div class="flex items-center mb-6">
+                    <span class="text-4xl mr-4">🌲</span>
+                    <h2 class="text-3xl font-bold text-gray-800">整体策略：城市+露营结合</h2>
+                </div>
+                <div class="bg-gradient-to-r from-pink-100 to-purple-100 rounded-2xl p-6">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                    <span class="font-semibold text-pink-600">核心思路</span>：南京的文化体验，
+                    <span class="font-bold text-purple-600">10月1日晚露营</span>，
+                    体验中原大地的星空与宁静 ✨
+                </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 详细行程 -->
+        <section class="mb-16">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">
+                <span class="text-5xl mr-3">📅</span>详细行程安排
+            </h2>
+            
+            <!-- 时间线容器 -->
+            <div class="relative">
+                <!-- 时间线 -->
+                <div class="absolute left-8 top-0 bottom-0 w-1 timeline-line rounded-full"></div>
+                
+                <!-- 9月30日 -->
+                <div class="relative mb-12 ml-20">
+                    <div class="absolute -left-16 top-6 w-8 h-8 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center">
+                        <span class="text-white text-sm font-bold">1</span>
+                    </div>
+                    <div class="bg-white rounded-3xl p-8 card-shadow hover:shadow-2xl transition-all duration-300">
+                        <div class="flex items-center mb-6">
+                            <span class="text-3xl mr-4">🌙</span>
+                            <h3 class="text-2xl font-bold text-gray-800">9月30日（周一）晚上</h3>
+                        </div>
+                        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 mb-4">
+                            <h4 class="text-xl font-semibold text-blue-700 mb-3">杭州 → 夜行至南京（约300km）</h4>
+                            <div class="space-y-3">
+                                <div class="flex items-start">
+                                    <span class="text-blue-500 mr-3 mt-1">🚗</span>
+                                    <div>
+                                        <span class="font-semibold">晚上 8:00-9:00 出发</span>
+                                        <p class="text-gray-600">从杭州出发，沿G25→G36高速前往南京</p>
+                                        <p class="text-sm text-green-600 mt-1">⚡ 建议在湖州服务区或宜兴服务区充电（约150km处）</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-purple-500 mr-3 mt-1">🏨</span>
+                                    <div>
+                                        <span class="font-semibold">凌晨 00:00-1:00 抵达南京</span>
+                                        <p class="text-gray-600">入住南京市区酒店（建议选择新街口或夫子庙附近）</p>
+                                        <p class="text-sm text-gray-500 italic mt-1">首夜刚出发，避免疲劳露营，保证充足睡眠 😴</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10月1日 -->
+                <div class="relative mb-12 ml-20">
+                    <div class="absolute -left-16 top-6 w-8 h-8 bg-gradient-to-r from-pink-400 to-red-500 rounded-full flex items-center justify-center">
+                        <span class="text-white text-sm font-bold">2</span>
+                    </div>
+                    <div class="bg-white rounded-3xl p-8 card-shadow hover:shadow-2xl transition-all duration-300">
+                        <div class="flex items-center mb-6">
+                            <span class="text-3xl mr-4">📅</span>
+                            <h3 class="text-2xl font-bold text-gray-800">10月1日（周二）</h3>
+                        </div>
+                        <div class="bg-gradient-to-r from-pink-50 to-rose-50 rounded-2xl p-6 mb-4">
+                            <h4 class="text-xl font-semibold text-pink-700 mb-4">南京文化游 → 夜行至商丘附近 → 露营初体验</h4>
+                            
+                            <!-- 上午 -->
+                            <div class="mb-6">
+                                <h5 class="text-lg font-semibold text-orange-600 mb-3 flex items-center">
+                                    <span class="mr-2">🌅</span>上午：南京经典游览
+                                </h5>
+                                <div class="space-y-2 ml-6">
+                                    <p><span class="font-semibold">8:00-9:00</span>：早餐，退房，行李放车上</p>
+                                    <p><span class="font-semibold">9:30-12:00</span>：游览【中山陵 & 明孝陵】，感受皇家气派 👑</p>
+                                    <p><span class="font-semibold">12:00-13:30</span>：午餐，推荐【南京大牌档】，品尝地道风味 🍜</p>
+                                </div>
+                            </div>
+
+                            <!-- 下午 -->
+                            <div class="mb-6">
+                                <h5 class="text-lg font-semibold text-blue-600 mb-3 flex items-center">
+                                    <span class="mr-2">🌆</span>下午：秦淮风情漫步
+                                </h5>
+                                <div class="space-y-2 ml-6">
+                                    <p><span class="font-semibold">14:00-16:30</span>：游览【夫子庙-秦淮河风光带】，逛老门东 🏮</p>
+                                    <p><span class="font-semibold">17:00 前</span>：离开南京，开始夜行</p>
+                                </div>
+                            </div>
+
+                            <!-- 晚上露营 -->
+                            <div class="bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl p-4">
+                                <h5 class="text-lg font-semibold text-purple-700 mb-3 flex items-center">
+                                    <span class="mr-2">⛺</span>晚上：夜行 + 露营（浪漫时刻）
+                                </h5>
+                                <div class="space-y-3 ml-6">
+                                    <p><span class="font-semibold">18:00 出发</span>：沿G36宁洛高速向西</p>
+                                    <p class="text-sm text-green-600">⚡ 建议在南京南站充电桩或滁州服务区充电后出发</p>
+                                    <div class="bg-white rounded-lg p-4">
+                                        <p class="font-semibold text-purple-600 mb-2">🏞️ 露营地点：商丘·黄河故道国家森林公园露营地</p>
+                                        <ul class="text-sm space-y-1 text-gray-600">
+                                            <li>• 国家森林公园内，环境优美，有树林、湖泊 🌲</li>
+                                            <li>• 在黄河故道边搭帐篷，听风观星 ⭐</li>
+                                            <li>• 导航地址：河南省商丘市梁园区黄河故道国家森林公园</li>
+                                        </ul>
+                                    </div>
+                                    <p><span class="font-semibold">抵达时间</span>：约晚上10:00-11:00</p>
+                                        <p class="text-sm text-purple-600">搭建帐篷，简单晚餐，夜话观星，享受宁静时光 💫</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10月2日 -->
+                <div class="relative mb-12 ml-20">
+                    <div class="absolute -left-16 top-6 w-8 h-8 bg-gradient-to-r from-green-400 to-teal-500 rounded-full flex items-center justify-center">
+                        <span class="text-white text-sm font-bold">3</span>
+                    </div>
+                    <div class="bg-white rounded-3xl p-8 card-shadow hover:shadow-2xl transition-all duration-300">
+                        <div class="flex items-center mb-6">
+                            <span class="text-3xl mr-4">📅</span>
+                            <h3 class="text-2xl font-bold text-gray-800">10月2日（周三）</h3>
+                        </div>
+                        <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-6">
+                            <h4 class="text-xl font-semibold text-green-700 mb-4">露营唤醒 → 轻松抵达濮阳</h4>
+                            
+                            <!-- 清晨 -->
+                            <div class="mb-6">
+                                <h5 class="text-lg font-semibold text-orange-600 mb-3 flex items-center">
+                                    <span class="mr-2">🌅</span>清晨：露营专属时刻
+                                </h5>
+                                <div class="space-y-2 ml-6">
+                                    <p><span class="font-semibold">6:30-7:00 起床</span>：迎接中原大地的第一缕晨光 ☀️</p>
+                                    <p><span class="font-semibold">7:00-8:00</span>：简单早餐，收拾帐篷和露营装备</p>
+                                    <p><span class="font-semibold">8:00-9:00</span>：营地附近散步，拍摄晨雾、露珠 📸</p>
+                                </div>
+                            </div>
+
+                            <!-- 上午下午 -->
+                            <div class="space-y-4">
+                                <div>
+                                    <h5 class="text-lg font-semibold text-blue-600 mb-2 flex items-center">
+                                        <span class="mr-2">🚗</span>上午：轻松赶路
+                                    </h5>
+                                    <p class="ml-6">9:00前出发，前往濮阳（约200-250km，3小时）</p>
+                                    <p class="ml-6 text-sm text-green-600">⚡ 途中可在商丘服务区或开封服务区充电</p>
+                                </div>
+                                <div>
+                                    <h5 class="text-lg font-semibold text-purple-600 mb-2 flex items-center">
+                                        <span class="mr-2">💒</span>下午：抵达濮阳，准备婚礼
+                                    </h5>
+                                    <div class="ml-6 space-y-1">
+                                        <p>下午3:00-5:00抵达濮阳，办理入住</p>
+                                        <p>整理装备，换上正装，探望新人 👰🤵</p>
+                                        <p class="font-semibold text-pink-600">晚上：参加婚礼，享受喜悦时刻 🎉</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 露营装备清单 -->
+        <section class="mb-16">
+            <div class="bg-white rounded-3xl p-8 card-shadow">
+                <div class="flex items-center mb-8">
+                    <span class="text-4xl mr-4">⛺</span>
+                    <h2 class="text-3xl font-bold text-gray-800">露营装备建议清单</h2>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4 flex items-center">
+                            <span class="mr-2">🏠</span>住宿
+                        </h3>
+                        <ul class="space-y-2 text-sm">
+                            <li>• 帐篷（含地钉、防风绳）</li>
+                            <li>• 防潮垫、睡袋</li>
+                            <li>• 充气枕头</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-2xl p-6">
+                        <h3 class="text-xl font-semibold text-yellow-700 mb-4 flex items-center">
+                            <span class="mr-2">💡</span>照明
+                        </h3>
+                        <ul class="space-y-2 text-sm">
+                            <li>• 头灯（每人一个）</li>
+                            <li>• 营地灯</li>
+                            <li>• 备用电池</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-6">
+                        <h3 class="text-xl font-semibold text-teal-700 mb-4 flex items-center">
+                            <span class="mr-2">⚡</span>电车充电
+                        </h3>
+                        <ul class="space-y-2 text-sm">
+                            <li>• 充电桩APP（特来电、星星充电）</li>
+                            <li>• 便携充电线</li>
+                            <li>• 充电卡/支付宝</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6">
+                        <h3 class="text-xl font-semibold text-green-700 mb-4 flex items-center">
+                            <span class="mr-2">🍞</span>食物
+                        </h3>
+                        <ul class="space-y-2 text-sm">
+                            <li>• 方便面、自热米饭</li>
+                            <li>• 面包、零食</li>
+                            <li>• 饮用水、咖啡/茶包</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-6">
+                        <h3 class="text-xl font-semibold text-purple-700 mb-4 flex items-center">
+                            <span class="mr-2">🧼</span>清洁
+                        </h3>
+                        <ul class="space-y-2 text-sm">
+                            <li>• 湿巾、垃圾袋</li>
+                            <li>• 洗手液</li>
+                            <li>• 务必带走所有垃圾！</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gradient-to-br from-pink-50 to-pink-100 rounded-2xl p-6">
+                        <h3 class="text-xl font-semibold text-pink-700 mb-4 flex items-center">
+                            <span class="mr-2">🛡️</span>安全
+                        </h3>
+                        <ul class="space-y-2 text-sm">
+                            <li>• 急救包、驱蚊液</li>
+                            <li>• 防晒霜</li>
+                            <li>• 车载充电器、充电桩APP</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 行程亮点总结 -->
+        <section class="mb-16">
+            <div class="bg-white rounded-3xl p-8 card-shadow">
+                <div class="flex items-center mb-8">
+                    <span class="text-4xl mr-4">🌟</span>
+                    <h2 class="text-3xl font-bold text-gray-800">行程亮点总结</h2>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl p-6 text-center">
+                        <div class="text-3xl mb-3">🌙</div>
+                        <h3 class="text-lg font-semibold text-indigo-700 mb-2">9月30日 晚</h3>
+                        <p class="text-sm text-gray-600">夜行+城市住宿</p>
+                        <p class="text-xs text-indigo-600 mt-2">安全抵达，养精蓄锐</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl p-6 text-center">
+                        <div class="text-3xl mb-3">🏛️</div>
+                        <h3 class="text-lg font-semibold text-orange-700 mb-2">10月1日</h3>
+                        <p class="text-sm text-gray-600">城市文化游</p>
+                        <p class="text-xs text-orange-600 mt-2">南京六朝古都，历史与美食</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl p-6 text-center">
+                        <div class="text-3xl mb-3">⭐</div>
+                        <h3 class="text-lg font-semibold text-purple-700 mb-2">10月1日 晚</h3>
+                        <p class="text-sm text-gray-600 font-bold">露营</p>
+                        <p class="text-xs text-purple-600 mt-2">黄河故道星空，自然静谧</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-green-100 to-teal-100 rounded-2xl p-6 text-center">
+                        <div class="text-3xl mb-3">🌅</div>
+                        <h3 class="text-lg font-semibold text-green-700 mb-2">10月2日 早</h3>
+                        <p class="text-sm text-gray-600 font-bold">露营唤醒</p>
+                        <p class="text-xs text-green-600 mt-2">晨光、清风、专属宁静</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-pink-100 to-rose-100 rounded-2xl p-6 text-center">
+                        <div class="text-3xl mb-3">💒</div>
+                        <h3 class="text-lg font-semibold text-pink-700 mb-2">10月2日 下午</h3>
+                        <p class="text-sm text-gray-600">城市</p>
+                        <p class="text-xs text-pink-600 mt-2">抵达濮阳，圆满准备婚礼</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-6">
+                <span class="text-6xl">🎉</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">十一国庆旅行</h3>
+            <p class="text-lg opacity-90 mb-6">精心规划的假期行程，期待美好的旅行体验</p>
+            <div class="flex justify-center space-x-6 text-sm">
+                <span>🌟 文化之旅</span>
+                <span>⛺ 露营体验</span>
+                <span>💒 见证爱情</span>
+                <span>📸 美好回忆</span>
+            </div>
+            <p class="mt-8 text-sm opacity-75">愿每一次旅行都充满快乐与收获 ✨</p>
+        </div>
+    </footer>
+</body>
+</html>

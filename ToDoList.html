@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>十一国庆旅行 - ToDoList</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'rose-gold': '#E8B4B8',
+                        'soft-pink': '#F8E8E9',
+                        'warm-beige': '#F5F1EB'
+                    },
+                    fontFamily: {
+                        'chinese': ['PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Noto Sans SC', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-shadow { box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .floating { animation: floating 3s ease-in-out infinite; }
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .checkbox-animation { transition: all 0.3s ease; }
+        .checkbox-animation:checked + label { 
+            text-decoration: line-through; 
+            opacity: 0.6; 
+        }
+        .priority-high { border-left: 4px solid #ef4444; }
+        .priority-medium { border-left: 4px solid #f59e0b; }
+        .priority-low { border-left: 4px solid #10b981; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-purple-50 to-indigo-100 min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-12 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center">
+                <h1 class="text-5xl font-bold mb-4 floating">
+                    📋 十一国庆旅行 ToDoList
+                </h1>
+                <p class="text-xl opacity-90 mb-6">出行准备清单 - 让旅行更完美</p>
+                <div class="flex justify-center space-x-8 text-lg">
+                    <div class="flex items-center">
+                        <span class="text-2xl mr-2">🔴</span>
+                        <span>高优先级</span>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-2xl mr-2">🟡</span>
+                        <span>中优先级</span>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-2xl mr-2">🟢</span>
+                        <span>低优先级</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <!-- 高优先级任务 -->
+        <section class="mb-12">
+            <div class="bg-white rounded-3xl p-8 card-shadow">
+                <div class="flex items-center mb-8">
+                    <span class="text-4xl mr-4">🔴</span>
+                    <h2 class="text-3xl font-bold text-red-600">高优先级任务</h2>
+                    <span class="ml-4 bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-semibold">必须完成</span>
+                </div>
+                <div class="space-y-4">
+                    <div class="priority-high bg-red-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+                        <div class="flex items-start space-x-4">
+                            <input type="checkbox" id="hotel" class="checkbox-animation mt-2 w-5 h-5 text-red-600 rounded focus:ring-red-500">
+                            <label for="hotel" class="flex-1 cursor-pointer">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-2xl mr-3">🏨</span>
+                                    <h3 class="text-xl font-semibold text-gray-800">预订酒店</h3>
+                                </div>
+                                <p class="text-gray-600 ml-11">南京市区酒店（9月30日晚）+ 濮阳酒店（10月2日-3日）</p>
+                                <p class="text-sm text-red-600 ml-11 mt-1">💡 建议选择新街口或夫子庙附近，方便游览</p>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="priority-high bg-red-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+                        <div class="flex items-start space-x-4">
+                            <input type="checkbox" id="charging-app" class="checkbox-animation mt-2 w-5 h-5 text-red-600 rounded focus:ring-red-500">
+                            <label for="charging-app" class="flex-1 cursor-pointer">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-2xl mr-3">⚡</span>
+                                    <h3 class="text-xl font-semibold text-gray-800">下载充电桩APP</h3>
+                                </div>
+                                <p class="text-gray-600 ml-11">特来电、星星充电、国家电网等</p>
+                                <p class="text-sm text-red-600 ml-11 mt-1">💡 提前注册并绑定支付方式，避免路上麻烦</p>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="priority-high bg-red-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+                        <div class="flex items-start space-x-4">
+                            <input type="checkbox" id="camping-equipment" class="checkbox-animation mt-2 w-5 h-5 text-red-600 rounded focus:ring-red-500">
+                            <label for="camping-equipment" class="flex-1 cursor-pointer">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-2xl mr-3">⛺</span>
+                                    <h3 class="text-xl font-semibold text-gray-800">准备露营装备</h3>
+                                </div>
+                                <p class="text-gray-600 ml-11">帐篷、睡袋、防潮垫、头灯、营地灯等</p>
+                                <p class="text-sm text-red-600 ml-11 mt-1">💡 检查装备完整性，确保防水防风功能正常</p>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 中优先级任务 -->
+        <section class="mb-12">
+            <div class="bg-white rounded-3xl p-8 card-shadow">
+                <div class="flex items-center mb-8">
+                    <span class="text-4xl mr-4">🟡</span>
+                    <h2 class="text-3xl font-bold text-yellow-600">中优先级任务</h2>
+                    <span class="ml-4 bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold">重要准备</span>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="priority-medium bg-yellow-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+                        <div class="flex items-start space-x-4">
+                            <input type="checkbox" id="route-planning" class="checkbox-animation mt-2 w-5 h-5 text-yellow-600 rounded focus:ring-yellow-500">
+                            <label for="route-planning" class="flex-1 cursor-pointer">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-2xl mr-3">🗺️</span>
+                                    <h3 class="text-lg font-semibold text-gray-800">规划充电路线</h3>
+                                </div>
+                                <p class="text-gray-600 text-sm ml-11">确认湖州、宜兴、滁州、商丘等服务区充电桩位置</p>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="priority-medium bg-yellow-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+                        <div class="flex items-start space-x-4">
+                            <input type="checkbox" id="camping-site" class="checkbox-animation mt-2 w-5 h-5 text-yellow-600 rounded focus:ring-yellow-500">
+                            <label for="camping-site" class="flex-1 cursor-pointer">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-2xl mr-3">🏞️</span>
+                                    <h3 class="text-lg font-semibold text-gray-800">联系露营地</h3>
+                                </div>
+                                <p class="text-gray-600 text-sm ml-11">商丘黄河故道国家森林公园，确认露营政策</p>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="priority-medium bg-yellow-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+                        <div class="flex items-start space-x-4">
+                            <input type="checkbox" id="wedding-prep" class="checkbox-animation mt-2 w-5 h-5 text-yellow-600 rounded focus:ring-yellow-500">
+                            <label for="wedding-prep" class="flex-1 cursor-pointer">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-2xl mr-3">💒</span>
+                                    <h3 class="text-lg font-semibold text-gray-800">准备婚礼相关</h3>
+                                </div>
+                                <p class="text-gray-600 text-sm ml-11">正装、礼金、祝福卡片等</p>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="priority-medium bg-yellow-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+                        <div class="flex items-start space-x-4">
+                            <input type="checkbox" id="food-supplies" class="checkbox-animation mt-2 w-5 h-5 text-yellow-600 rounded focus:ring-yellow-500">
+                            <label for="food-supplies" class="flex-1 cursor-pointer">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-2xl mr-3">🍞</span>
+                                    <h3 class="text-lg font-semibold text-gray-800">采购露营食物</h3>
+                                </div>
+                                <p class="text-gray-600 text-sm ml-11">方便面、自热米饭、面包、零食、饮用水等</p>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="priority-medium bg-yellow-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 md:col-span-2">
+                        <div class="flex items-start space-x-4">
+                            <input type="checkbox" id="safety-kit" class="checkbox-animation mt-2 w-5 h-5 text-yellow-600 rounded focus:ring-yellow-500">
+                            <label for="safety-kit" class="flex-1 cursor-pointer">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-2xl mr-3">🛡️</span>
+                                    <h3 class="text-lg font-semibold text-gray-800">准备安全用品</h3>
+                                </div>
+                                <p class="text-gray-600 text-sm ml-11">急救包、驱蚊液、防晒霜、湿巾、垃圾袋等</p>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 低优先级任务 -->
+        <section class="mb-12">
+            <div class="bg-white rounded-3xl p-8 card-shadow">
+                <div class="flex items-center mb-8">
+                    <span class="text-4xl mr-4">🟢</span>
+                    <h2 class="text-3xl font-bold text-green-600">低优先级任务</h2>
+                    <span class="ml-4 bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">出发前检查</span>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="priority-low bg-green-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+                        <div class="flex items-start space-x-4">
+                            <input type="checkbox" id="vehicle-check" class="checkbox-animation mt-2 w-5 h-5 text-green-600 rounded focus:ring-green-500">
+                            <label for="vehicle-check" class="flex-1 cursor-pointer">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-2xl mr-3">🚗</span>
+                                    <h3 class="text-lg font-semibold text-gray-800">电车出行检查</h3>
+                                </div>
+                                <p class="text-gray-600 text-sm ml-11">电量充满、充电线检查、轮胎气压、保险等</p>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="priority-low bg-green-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+                        <div class="flex items-start space-x-4">
+                            <input type="checkbox" id="weather-check" class="checkbox-animation mt-2 w-5 h-5 text-green-600 rounded focus:ring-green-500">
+                            <label for="weather-check" class="flex-1 cursor-pointer">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-2xl mr-3">🌤️</span>
+                                    <h3 class="text-lg font-semibold text-gray-800">查看天气预报</h3>
+                                </div>
+                                <p class="text-gray-600 text-sm ml-11">准备相应衣物（特别是露营夜晚保暖）</p>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 进度统计 -->
+        <section class="mb-12">
+            <div class="bg-white rounded-3xl p-8 card-shadow">
+                <div class="flex items-center mb-6">
+                    <span class="text-4xl mr-4">📊</span>
+                    <h2 class="text-3xl font-bold text-gray-800">完成进度</h2>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gradient-to-br from-red-100 to-red-200 rounded-2xl p-6 text-center">
+                        <div class="text-3xl mb-2">🔴</div>
+                        <h3 class="text-lg font-semibold text-red-700">高优先级</h3>
+                        <p class="text-2xl font-bold text-red-800" id="high-progress">0/3</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-yellow-100 to-yellow-200 rounded-2xl p-6 text-center">
+                        <div class="text-3xl mb-2">🟡</div>
+                        <h3 class="text-lg font-semibold text-yellow-700">中优先级</h3>
+                        <p class="text-2xl font-bold text-yellow-800" id="medium-progress">0/5</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-green-100 to-green-200 rounded-2xl p-6 text-center">
+                        <div class="text-3xl mb-2">🟢</div>
+                        <h3 class="text-lg font-semibold text-green-700">低优先级</h3>
+                        <p class="text-2xl font-bold text-green-800" id="low-progress">0/2</p>
+                    </div>
+                </div>
+                <div class="mt-6 bg-gray-200 rounded-full h-4">
+                    <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-4 rounded-full transition-all duration-500" style="width: 0%" id="overall-progress"></div>
+                </div>
+                <p class="text-center mt-2 text-gray-600">总体完成度: <span id="overall-percentage">0%</span></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-lg mb-2">🌟 十一国庆旅行准备清单</p>
+            <p class="text-gray-400">祝您旅途愉快，露营浪漫，婚礼圆满！</p>
+        </div>
+    </footer>
+
+    <script>
+        // 进度跟踪功能
+        function updateProgress() {
+            const highPriorityChecked = document.querySelectorAll('input[type="checkbox"]:checked').length;
+            const totalTasks = document.querySelectorAll('input[type="checkbox"]').length;
+            
+            // 分别统计各优先级完成情况
+            const highChecked = document.querySelectorAll('#hotel:checked, #charging-app:checked, #camping-equipment:checked').length;
+            const mediumChecked = document.querySelectorAll('#route-planning:checked, #camping-site:checked, #wedding-prep:checked, #food-supplies:checked, #safety-kit:checked').length;
+            const lowChecked = document.querySelectorAll('#vehicle-check:checked, #weather-check:checked').length;
+            
+            document.getElementById('high-progress').textContent = `${highChecked}/3`;
+            document.getElementById('medium-progress').textContent = `${mediumChecked}/5`;
+            document.getElementById('low-progress').textContent = `${lowChecked}/2`;
+            
+            const overallPercentage = Math.round((highPriorityChecked / totalTasks) * 100);
+            document.getElementById('overall-percentage').textContent = `${overallPercentage}%`;
+            document.getElementById('overall-progress').style.width = `${overallPercentage}%`;
+        }
+
+        // 为所有复选框添加事件监听器
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', updateProgress);
+        });
+
+        // 初始化进度
+        updateProgress();
+    </script>
+</body>
+</html>
