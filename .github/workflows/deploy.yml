@@ -1,6 +1,9 @@
 name: Deploy
 
-on: [push]
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -8,34 +11,34 @@ jobs:
     name: Deploy hexo blog
     steps:
       - name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@v4
         with:
           submodules: true
 
-      - name: Cache node modules
-        uses: actions/cache@v4
-        id: cache
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          node-version: '22'
+          cache: npm
 
       - name: Install Dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
 
-      - name: Deploy
-        id: deploy
-        uses: sma11black/hexo-action@v1.0.3
-        with:
-          deploy_key: ${{ secrets.DEPLOY_KEY }}
-          user_name: e-sen  # (or delete this input setting to use bot account)
-          user_email: i@iamee.me  # (or delete this input setting to use bot account)
-          commit_msg: ${{ github.event.head_commit.message }}  # (or delete this input setting to use hexo default settings)
-          # Use the output from the `deploy` step(use for test action)
+      - name: Build
+        run: npm run build
 
-      - name: Get the output
+      - name: Deploy
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message || 'Deploy blog' }}
         run: |
-          echo "${{ steps.deploy.outputs.notify }}"
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$DEPLOY_KEY" > ~/.ssh/dsh_blog_deploy
+          chmod 600 ~/.ssh/dsh_blog_deploy
+          trap 'rm -f ~/.ssh/dsh_blog_deploy' EXIT
+          ssh-keyscan -t ed25519 github.com >> ~/.ssh/known_hosts
+          export GIT_SSH_COMMAND="ssh -i $HOME/.ssh/dsh_blog_deploy -o IdentitiesOnly=yes"
+          git config --global user.name e-sen
+          git config --global user.email i@iamee.me
+          npm run deploy -- --message "$COMMIT_MESSAGE"
 
