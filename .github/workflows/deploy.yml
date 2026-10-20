@@ -1,5 +1,8 @@
 name: Deploy
 
+permissions:
+  contents: write
+
 on:
   push:
     branches: [master]
@@ -29,15 +32,11 @@ jobs:
 
       - name: Deploy
         env:
-          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
           COMMIT_MESSAGE: ${{ github.event.head_commit.message || 'Deploy blog' }}
         run: |
-          install -m 700 -d ~/.ssh
-          printf '%s\n' "$DEPLOY_KEY" > ~/.ssh/dsh_blog_deploy
-          chmod 600 ~/.ssh/dsh_blog_deploy
-          trap 'rm -f ~/.ssh/dsh_blog_deploy' EXIT
-          ssh-keyscan -t ed25519 github.com >> ~/.ssh/known_hosts
-          export GIT_SSH_COMMAND="ssh -i $HOME/.ssh/dsh_blog_deploy -o IdentitiesOnly=yes"
+          git config --global url.https://github.com/.insteadOf git@github.com:
+          git config --global http.https://github.com/.extraheader "$(git config --local --get http.https://github.com/.extraheader)"
+          trap 'git config --global --unset-all http.https://github.com/.extraheader' EXIT
           git config --global user.name e-sen
           git config --global user.email i@iamee.me
           npm run deploy -- --message "$COMMIT_MESSAGE"
